@@ -1,0 +1,83 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #FFFFFF;
+  --board-color: #F0F0F0;
+  --cell-border: #CCCCCC;
+  --font-color: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--board-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--font-color);
+  border: 2px solid var(--cell-border);
+  background: var(--secondary-color);
+  cursor: pointer;
+}
+
+.cell.taken {
+  pointer-events: none;
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: var(--font-color);
+}
+
+#reset-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#reset-btn:hover {
+  background: #45a049;
+}
